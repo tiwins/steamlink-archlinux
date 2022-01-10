@@ -30,7 +30,10 @@ mv ./kexec /mnt/disk/usr/bin
 echo "Setting kexec permissions"
 chmod 755 /mnt/disk/usr/bin/kexec
 
-#move Kernel modules
+#remove unused kernel modules
+rm -R /mnt/disk/lib/modules/*
+
+#move new Kernel modules
 mv -r 5.10.32-mrvl/ /mnt/disk/lib/modules/
 
 # Make Home Directory
@@ -44,13 +47,19 @@ mkdir -p /mnt/disk/dev
 echo "Made steamlink directory"
 mkdir -p /mnt/disk/steamlink
 
+#moving run.sh
 echo "Made factory_test directory"
 mkdir -p /mnt/disk/steamlink/factory_test
 
-#moving run.sh
 echo "move run.sh"
 mv ./run.sh /mnt/disk/steamlink/factory_test/
 chmod 755 /mnt/disk/steamlink/factory_test/run.sh
+
+#create enable.ssh again, just to make sure
+mkdir -p /mnt/disk/steamlink/config
+mkdir -p /mnt/disk/steamlink/config/system
+echo "enable" > /mnt/disk/steamlink/config/system/enable_ssh.txt
+
 
 #cleaning
 rm ./install.sh
