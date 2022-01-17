@@ -22,8 +22,14 @@ rm -rf ArchLinuxARM-armv7-latest.tar.gz
 echo "Downloading some needed files..."
 cd boot
 rm -rf ./zImage
+
+#get extra stuff
 wget https://github.com/Nargajuna/steamlink-archlinux/archive/refs/heads/main.zip
 unzip main.zip -d .
+cd steamlink-archlinux-main
+mv * ../
+cd ..
+rm -Rf steamlink-archlinux-main
 
 #move kexec bin
 mv ./kexec /mnt/disk/usr/bin
