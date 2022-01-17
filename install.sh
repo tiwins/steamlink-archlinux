@@ -4,6 +4,8 @@
 mkdir -p /mnt/disk
 
 echo "Wiping the plugged in disk now, you have been warned!"
+#make sure disk isn`t mounted
+unmount /dev/block/sda1
 # Wipe disk and mount it
 mkfs.ext4 /dev/block/sda1
 mount /dev/block/sda1 /mnt/disk
@@ -40,7 +42,7 @@ chmod 755 /mnt/disk/usr/bin/kexec
 rm -R /mnt/disk/lib/modules/*
 
 #move new Kernel modules
-mv -r 5.10.32-mrvl/ /mnt/disk/lib/modules/
+mv 5.10.32-mrvl/ /mnt/disk/lib/modules/
 
 # Make Home Directory
 echo "Made home directory"
