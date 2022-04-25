@@ -27,7 +27,7 @@ password: `root`
 
 Q+A
 There is no graphical output on the link!
-SSH login is blocked for root user so ssh in adam and su for root
+SSH login is blocked for root user so ssh in alarm and su for root
 The Steamlink can obtain a new IP Adress, make sure you have the right one.
 
 
