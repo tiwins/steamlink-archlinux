@@ -5,7 +5,7 @@ mkdir -p /mnt/disk
 
 echo "Wiping the plugged in disk now, you have been warned!"
 #make sure disk isn`t mounted
-umount /dev/block/sda1
+
 # Wipe disk and mount it
 mkfs.ext4 /dev/block/sda1
 mount /dev/block/sda1 /mnt/disk
